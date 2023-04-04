@@ -1,6 +1,7 @@
 import React from 'react';
 import * as eva from '@eva-design/eva';
-import { ApplicationProvider, Layout } from '@ui-kitten/components';
+import { ApplicationProvider, IconRegistry, Layout, Text } from '@ui-kitten/components';
+import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import TodoList from './src/components/TodoList';
 import { SafeAreaView } from 'react-native';
 
@@ -9,12 +10,15 @@ const HomeScreen = () => (
     <SafeAreaView>
       <TodoList/>
     </SafeAreaView>
-    {/* <Text category='h1'>HOME</Text> */}
   </Layout>
 );
 
 export default () => (
+  <>
+  <IconRegistry icons={EvaIconsPack} />
   <ApplicationProvider {...eva} theme={eva.light}>
-    <HomeScreen />
+  <HomeScreen />
   </ApplicationProvider>
+  </>
+
 );
